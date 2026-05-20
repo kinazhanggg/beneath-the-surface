@@ -1,1 +1,239 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneath the Surface Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        .wrap {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 28px;
+        }
+        .q-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .q-title {
+            font-size: 19px;
+            margin-bottom: 18px;
+        }
+        .opt {
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.07);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .opt:hover {
+            background: rgba(255,255,255,0.14);
+        }
+        .opt.selected {
+            background: #4a6fa5;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background: #4a6fa5;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 30px 0 50px;
+        }
+        .result-page {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+        .emoji {
+            font-size: 70px;
+            margin: 20px 0;
+        }
+        .res-name {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .res-slogan {
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+        .res-desc {
+            font-size: 17px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="quizPage">
+        <h1>Beneath the Surface Quiz</h1>
+
+        <div class="q-item">
+            <div class="q-title">1. Favorite AP class — be honest:</div>
+            <div class="opt" data-type="A">AP Lit. Give me a weird book and let me overthink it.</div>
+            <div class="opt" data-type="C">Anything with group discussion. I talk, therefore I am.</div>
+            <div class="opt" data-type="B">Whichever one I'm vibing with that week, no loyalty.</div>
+            <div class="opt" data-type="D">The quiet one. Headphones in, work done, no drama.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">2. It's Friday night. Where are you, actually?</div>
+            <div class="opt" data-type="B">Out somewhere — not sure where yet, that's the fun part.</div>
+            <div class="opt" data-type="C">Wherever my friends are. I basically AM the group chat.</div>
+            <div class="opt" data-type="D">Home. Lights low. Phone face down. Heaven.</div>
+            <div class="opt" data-type="A">Down a 2am rabbit hole about something nobody asked about.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">3. Group project. What role do you secretly always take?</div>
+            <div class="opt" data-type="C">I run the show. Someone has to and it might as well be me.</div>
+            <div class="opt" data-type="A">I do the deep research part everyone else is scared of.</div>
+            <div class="opt" data-type="B">I go with the flow and fill whatever gap is left open.</div>
+            <div class="opt" data-type="D">I quietly do my part really well and skip half the meetings.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">4. A Saturday opens up with zero plans. Your reaction?</div>
+            <div class="opt" data-type="A">Perfect. Finally time to think about something properly.</div>
+            <div class="opt" data-type="B">I'll figure it out — something always happens anyway.</div>
+            <div class="opt" data-type="C">Texting people within 5 minutes. Empty days are kind of sad.</div>
+            <div class="opt" data-type="D">Bliss. This is genuinely the dream.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">5. A friend is upset. First instinct?</div>
+            <div class="opt" data-type="C">I'm already on my way over.</div>
+            <div class="opt" data-type="A">I want to understand exactly what happened. All of it.</div>
+            <div class="opt" data-type="D">I sit with them. Don't need to fix it, just be there.</div>
+            <div class="opt" data-type="B">I drag them somewhere fun to get them out of their head.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">6. How do you make a big decision?</div>
+            <div class="opt" data-type="A">Research it to death. Then research it a little more.</div>
+            <div class="opt" data-type="D">Sit with it quietly until it just... feels right.</div>
+            <div class="opt" data-type="B">Pure gut. I'll know in the moment.</div>
+            <div class="opt" data-type="C">Ask everyone I trust, then decide.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">7. Your phone notifications right now are:</div>
+            <div class="opt" data-type="C">Chaos. 3 group chats, all unread, all somehow about me.</div>
+            <div class="opt" data-type="D">On silent. Always. Forever. Don't perceive me.</div>
+            <div class="opt" data-type="B">No idea honestly, I don't really check.</div>
+            <div class="opt" data-type="A">A few — but I reply with full paragraphs when I do.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">8. If you lived in the ocean, you'd be:</div>
+            <div class="opt" data-type="B">A jellyfish. Drifting, no plan, completely fine with it.</div>
+            <div class="opt" data-type="A">Something in the deep where the light doesn't reach.</div>
+            <div class="opt" data-type="C">A dolphin, obviously. In a pod, making noise.</div>
+            <div class="opt" data-type="D">A tiny tide pool. My own little world, my own rules.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">9. You're planning a trip. Step one?</div>
+            <div class="opt" data-type="A">Research the place obsessively until I know it by heart.</div>
+            <div class="opt" data-type="C">Group trip or no trip. The more people the better.</div>
+            <div class="opt" data-type="B">Book the ticket. I'll figure the rest out when I land.</div>
+            <div class="opt" data-type="D">Pick somewhere quiet where I won't have to talk to anyone.</div>
+        </div>
+
+        <div class="q-item">
+            <div class="q-title">10. Here's the thing about the 'real' you:</div>
+            <div class="opt" data-type="A">There's a lot going on under there. Most people get the shallow version.</div>
+            <div class="opt" data-type="B">What you see is what you get. I just kind of float.</div>
+            <div class="opt" data-type="C">I'm pretty much the same everywhere. Open book.</div>
+            <div class="opt" data-type="D">I save the real me for a very small circle.</div>
+        </div>
+
+        <button class="submit-btn" onclick="goResult()">View Your Result</button>
+    </div>
+
+    <div class="wrap result-page" id="resultPage">
+        <div class="emoji" id="resEmoji"></div>
+        <h2 class="res-name" id="resName"></h2>
+        <p class="res-slogan" id="resSlogan"></p>
+        <p class="res-desc" id="resDesc"></p>
+    </div>
+
+    <script>
+        const resultData = {
+            A: {
+                name: "The Deep Diver",
+                emoji: "🐋",
+                slogan: "Most of you happens where the light doesn't reach.",
+                desc: "You don't do shallow. When something catches you, you go all the way down — into the book, the idea, the person, the 2am thought. People meet a calm, quiet version of you and have no clue how much is moving underneath. It can feel lonely sometimes, being the one who feels things at full volume. But it also means nothing you love is ever loved halfway."
+            },
+            B: {
+                name: "The Drifter",
+                emoji: "🪼",
+                slogan: "You don't fight the current. You ride it.",
+                desc: "Plans? Loose. Stress? Mostly optional. You move through life trusting that things tend to work out, and somehow they usually do. People love how easy you are to be around — you make spontaneity look effortless. The trick is that 'going with the flow' is its own kind of skill, not laziness. You just figured out early that not everything needs to be gripped so tightly."
+            },
+            C: {
+                name: "The Lighthouse",
+                emoji: "🗼",
+                slogan: "You're how other people find their way back.",
+                desc: "You run warm. You're the first text, the one who shows up, the group chat that refuses to die. Being around people doesn't drain you — it's where you recharge. People lean on you a lot, and you mostly like it, even when it's a lot. Just remember a lighthouse needs someone watching over it too. You're allowed to be taken care of, not only to do the caring."
+            },
+            D: {
+                name: "The Tide Pool",
+                emoji: "🐚",
+                slogan: "A small, calm world that runs by its own rules.",
+                desc: "You've built something rare: a life that's quiet on purpose. You don't need a crowd, you don't chase noise, and you let very few people all the way in — but the ones who get there get the real, unfiltered you. People mistake your stillness for distance. It isn't. You just feel things slowly and privately, and you've never apologized for that. You shouldn't start now."
+            }
+        };
+
+        let score = {A:0, B:0, C:0, D:0};
+
+        document.querySelectorAll('.opt').forEach(item=>{
+            item.addEventListener('click',function(){
+                let parent = this.parentElement;
+                parent.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));
+                this.classList.add('selected');
+            })
+        })
+
+        function goResult(){
+            score = {A:0, B:0, C:0, D:0};
+            document.querySelectorAll('.opt.selected').forEach(selected=>{
+                let t = selected.getAttribute('data-type');
+                score[t]++;
+            })
+            let maxType = Object.keys(score).sort((a,b)=>score[b]-score[a])[0];
+            let final = resultData[maxType];
+
+            document.getElementById('quizPage').style.display = 'none';
+            document.getElementById('resultPage').style.display = 'block';
+
+            document.getElementById('resEmoji').innerText = final.emoji;
+            document.getElementById('resName').innerText = final.name;
+            document.getElementById('resSlogan').innerText = final.slogan;
+            document.getElementById('resDesc').innerText = final.desc;
+        }
+    </script>
+</body>
+</html>
