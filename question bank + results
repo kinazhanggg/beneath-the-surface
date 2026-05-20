@@ -1,0 +1,164 @@
+const questions = [
+  {
+    id: 1,
+    question: "Favorite AP class — be honest:",
+    options: [
+      { text: "AP Lit. Give me a weird book and let me overthink it.", type: "A" },
+      { text: "Anything with group discussion. I talk, therefore I am.", type: "C" },
+      { text: "Whichever one I'm vibing with that week, no loyalty.", type: "B" },
+      { text: "The quiet one. Headphones in, work done, no drama.", type: "D" },
+    ],
+  },
+  {
+    id: 2,
+    question: "It's Friday night. Where are you, actually?",
+    options: [
+      { text: "Out somewhere — not sure where yet, that's the fun part.", type: "B" },
+      { text: "Wherever my friends are. I basically AM the group chat.", type: "C" },
+      { text: "Home. Lights low. Phone face down. Heaven.", type: "D" },
+      { text: "Down a 2am rabbit hole about something nobody asked about.", type: "A" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Group project. What role do you secretly always take?",
+    options: [
+      { text: "I run the show. Someone has to and it might as well be me.", type: "C" },
+      { text: "I do the deep research part everyone else is scared of.", type: "A" },
+      { text: "I go with the flow and fill whatever gap is left open.", type: "B" },
+      { text: "I quietly do my part really well and skip half the meetings.", type: "D" },
+    ],
+  },
+  {
+    id: 4,
+    question: "A Saturday opens up with zero plans. Your reaction?",
+    options: [
+      { text: "Perfect. Finally time to think about something properly.", type: "A" },
+      { text: "I'll figure it out — something always happens anyway.", type: "B" },
+      { text: "Texting people within 5 minutes. Empty days are kind of sad.", type: "C" },
+      { text: "Bliss. This is genuinely the dream.", type: "D" },
+    ],
+  },
+  {
+    id: 5,
+    question: "A friend is upset. First instinct?",
+    options: [
+      { text: "I'm already on my way over.", type: "C" },
+      { text: "I want to understand exactly what happened. All of it.", type: "A" },
+      { text: "I sit with them. Don't need to fix it, just be there.", type: "D" },
+      { text: "I drag them somewhere fun to get them out of their head.", type: "B" },
+    ],
+  },
+  {
+    id: 6,
+    question: "How do you make a big decision?",
+    options: [
+      { text: "Research it to death. Then research it a little more.", type: "A" },
+      { text: "Sit with it quietly until it just... feels right.", type: "D" },
+      { text: "Pure gut. I'll know in the moment.", type: "B" },
+      { text: "Ask everyone I trust, then decide.", type: "C" },
+    ],
+  },
+  {
+    id: 7,
+    question: "Your phone notifications right now are:",
+    options: [
+      { text: "Chaos. 3 group chats, all unread, all somehow about me.", type: "C" },
+      { text: "On silent. Always. Forever. Don't perceive me.", type: "D" },
+      { text: "No idea honestly, I don't really check.", type: "B" },
+      { text: "A few — but I reply with full paragraphs when I do.", type: "A" },
+    ],
+  },
+  {
+    id: 8,
+    question: "If you lived in the ocean, you'd be:",
+    options: [
+      { text: "A jellyfish. Drifting, no plan, completely fine with it.", type: "B" },
+      { text: "Something in the deep where the light doesn't reach.", type: "A" },
+      { text: "A dolphin, obviously. In a pod, making noise.", type: "C" },
+      { text: "A tiny tide pool. My own little world, my own rules.", type: "D" },
+    ],
+  },
+  {
+    id: 9,
+    question: "You're planning a trip. Step one?",
+    options: [
+      { text: "Research the place obsessively until I know it by heart.", type: "A" },
+      { text: "Group trip or no trip. The more people the better.", type: "C" },
+      { text: "Book the ticket. I'll figure the rest out when I land.", type: "B" },
+      { text: "Pick somewhere quiet where I won't have to talk to anyone.", type: "D" },
+    ],
+  },
+  {
+    id: 10,
+    question: "Here's the thing about the 'real' you:",
+    options: [
+      { text: "There's a lot going on under there. Most people get the shallow version.", type: "A" },
+      { text: "What you see is what you get. I just kind of float.", type: "B" },
+      { text: "I'm pretty much the same everywhere. Open book.", type: "C" },
+      { text: "I save the real me for a very small circle.", type: "D" },
+    ],
+  },
+];
+
+// Optional: little random lines quiz.js can show between questions.
+// (Totally optional — only use it if you want. Pick one at random.)
+const loadingLines = [
+  "going a little deeper...",
+  "the water gets darker here...",
+  "nobody's watching down here...",
+  "almost at the bottom...",
+  "hold your breath...",
+];
+
+
+results = {
+  A: {
+    type: "A",
+    name: "The Deep Diver",
+    emoji: "🐋",
+    tagline: "Most of you happens where the light doesn't reach.",
+    description:
+      "You don't do shallow. When something catches you, you go all the way down — into the book, the idea, the person, the 2am thought. People meet a calm, quiet version of you and have no clue how much is moving underneath. It can feel lonely sometimes, being the one who feels things at full volume. But it also means nothing you love is ever loved halfway.",
+    traits: ["Curious", "Intense", "Loyal", "Overthinks (lovingly)"],
+    onTheSurface: "Quiet, low-key, easy to overlook.",
+    underneath: "An entire ocean nobody saw coming.",
+    yourMatch: "The Lighthouse — they pull you up for air when you forget to.",
+  },
+  B: {
+    type: "B",
+    name: "The Drifter",
+    emoji: "🪼",
+    tagline: "You don't fight the current. You ride it.",
+    description:
+      "Plans? Loose. Stress? Mostly optional. You move through life trusting that things tend to work out, and somehow they usually do. People love how easy you are to be around — you make spontaneity look effortless. The trick is that 'going with the flow' is its own kind of skill, not laziness. You just figured out early that not everything needs to be gripped so tightly.",
+    traits: ["Easygoing", "Spontaneous", "Open", "Weirdly hard to stress out"],
+    onTheSurface: "Carefree, breezy, up for anything.",
+    underneath: "Quietly trusts the world more than most people dare to.",
+    yourMatch: "The Tide Pool — your calm and their calm are different, and it works.",
+  },
+  C: {
+    type: "C",
+    name: "The Lighthouse",
+    emoji: "🗼",
+    tagline: "You're how other people find their way back.",
+    description:
+      "You run warm. You're the first text, the one who shows up, the group chat that refuses to die. Being around people doesn't drain you — it's where you recharge. People lean on you a lot, and you mostly like it, even when it's a lot. Just remember a lighthouse needs someone watching over it too. You're allowed to be taken care of, not only to do the caring.",
+    traits: ["Warm", "Social", "Reliable", "Always texts first"],
+    onTheSurface: "Bright, loud, impossible to miss.",
+    underneath: "Quietly hopes the people they hold are holding them back.",
+    yourMatch: "The Deep Diver — they see the part of you you don't broadcast.",
+  },
+  D: {
+    type: "D",
+    name: "The Tide Pool",
+    emoji: "🐚",
+    tagline: "A small, calm world that runs by its own rules.",
+    description:
+      "You've built something rare: a life that's quiet on purpose. You don't need a crowd, you don't chase noise, and you let very few people all the way in — but the ones who get there get the real, unfiltered you. People mistake your stillness for distance. It isn't. You just feel things slowly and privately, and you've never apologized for that. You shouldn't start now.",
+    traits: ["Calm", "Observant", "Independent", "Quietly deep"],
+    onTheSurface: "Reserved, self-contained, a little mysterious.",
+    underneath: "A whole tiny ecosystem, thriving without an audience.",
+    yourMatch: "The Drifter — easy company who never asks you to perform.",
+  },
+};
