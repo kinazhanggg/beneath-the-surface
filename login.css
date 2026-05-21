@@ -1,1 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, serif;
+}
 
+body {
+    background: linear-gradient(180deg, #1a1a2e, #0f0f1e);
+    color: #e8e8e8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 35px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+p {
+    opacity: 0.7;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.message {
+    margin-top: 20px;
+    color: #ff7a7a;
+    font-size: 14px;
+}
