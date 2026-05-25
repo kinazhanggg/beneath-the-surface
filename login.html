@@ -1,28 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Beneath the Surface</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login / Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body {
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .toggle {
+            text-align: center;
+            margin-top: 15px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        #register {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-box">
-        <h1>Welcome Back</h1>
-        <p>Sign in to start your quiz</p>
-        
-        <div class="input-group">
-            <input type="text" id="username" placeholder="Username">
+    <div class="container">
+        <!-- 登录界面 -->
+        <div id="login">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username"><br>
+            <input type="password" placeholder="Password"><br>
+            <button>Sign In</button>
+            <div class="toggle" onclick="switchToRegister()">Don't have an account? Register</div>
         </div>
-        
-        <div class="input-group">
-            <input type="password" id="password" placeholder="Password">
+
+        <div id="register">
+            <h2>Register</h2>
+            <input type="text" placeholder="Username"><br>
+            <input type="password" placeholder="Password"><br>
+            <input type="password" placeholder="Confirm Password"><br>
+            <button>Create Account</button>
+            <div class="toggle" onclick="switchToLogin()">Already have an account? Login</div>
         </div>
-        
-        <button id="loginBtn" onclick="login()">Login</button>
-        <p class="message" id="msg"></p>
     </div>
 
-    <script src="login.js"></script>
+    <script>
+        function switchToRegister() {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("register").style.display = "block";
+        }
+
+        function switchToLogin() {
+            document.getElementById("register").style.display = "none";
+            document.getElementById("login").style.display = "block";
+        }
+    </script>
 </body>
 </html>
