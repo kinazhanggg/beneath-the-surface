@@ -61,8 +61,8 @@ The four results:
 ## Job Division
 
 - Kina: Quiz content + results, structure of the website, visual direction, README
-- Kevin: Quiz + result page, the quiz logic (showing questions, scoring)
-- Aden: Demo video
+- Kevin: Quiz page, the quiz logic (showing questions, scoring)
+- Aden: Result page, Demo video
 
 ---
 
