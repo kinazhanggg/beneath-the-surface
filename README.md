@@ -36,7 +36,8 @@ The four results:
 ## Tech we used
 
 - HTML / CSS / JavaScript (no frameworks — just the basics)
-- [Supabase] for the login / sign-up feature
+- Github
+- DouBao AI
 - Deployed with Vercel
 
 ---
