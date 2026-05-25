@@ -72,7 +72,7 @@
         <input id="regUser" type="text" placeholder="Username"><br>
         <input id="regPwd" type="password" placeholder="Password"><br>
         <input id="regPwd2" type="password" placeholder="Confirm Password"><br>
-        <button onclick="register()">Register</button>
+        <button onclick="register()">Create Account</button>
         <div class="toggle" onclick="switchToLogin()">Back to Login</div>
     </div>
 </div>
@@ -96,10 +96,13 @@
             alert("Passwords do not match!");
             return;
         }
+
         localStorage.setItem("username", user);
         localStorage.setItem("password", pwd);
-        alert("Registration success! Please login.");
-        switchToLogin();
+
+        localStorage.setItem("isLogin", "yes");
+
+        window.location.href = "quiz.html";
     }
 
     function login() {
@@ -111,7 +114,7 @@
 
         if (user == realUser && pwd == realPwd) {
             localStorage.setItem("isLogin", "yes");
-            window.location.href = "quiz.html"; 
+            window.location.href = "quiz.html";
         } else {
             alert("Wrong username or password!");
         }
